@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SheetKit'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A lightweight, user-friendly Swift library to create adaptive card-styled UI for action sheet and interactive bottom sheets easily
 '
 
@@ -38,7 +38,7 @@ SheetKit also provides BottomSheets called as PreviewViewController in the kit. 
   s.ios.deployment_target = '11.0'
 
   s.source_files = 'SheetKit/Classes/**/*'
-  s.swift_versions = '5.0'
+  s.swift_version = '5.0'
   
   # s.resource_bundles = {
   #   'SheetKit' => ['SheetKit/Assets/*.png']
