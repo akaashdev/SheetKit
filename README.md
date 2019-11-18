@@ -8,12 +8,13 @@
 
 SheetKit lets you create bottom sheets with just few lines of code. It also provides a modern Card-styled UI for action sheet for both iPad and iPhone. And yes, it supports dark mode just like any other UIView in UIKit does.
 
-<img align="left" height="480" src="https://github.com/akaashdev/SheetKit/blob/master/Screenshots/screen-record-iphone-1.gif">
-<img align="left" height="480" src="https://github.com/akaashdev/SheetKit/blob/master/Screenshots/screen-record-ipad-1.gif">
+![Alt Text](https://github.com/akaashdev/SheetKit/blob/master/Screenshots/screen-record-iphone-1.gif)
 
 SheetKit supports ActionItem types like button, title, header, cancelButton, destructiveButton and separator. You can also create a custom styled item for the sheet. The color, image, imageTintColor of button is all customizable. A button with no image is also supported.
 
-SheetKit also provides BottomSheets called as PreviewViewController in the kit. These components interactively grow on dragging, occupying the required space on both brief and detail mode. The heights of each mode is completely customizable.​
+SheetKit also provides BottomSheets called as PreviewViewController in the kit. These components interactively grow on dragging, occupying the required space on both brief and detail mode. The heights of each mode is completely customizable.
+
+![Alt Text](https://github.com/akaashdev/SheetKit/blob/master/Screenshots/screen-record-ipad-1.gif)
 
 ## Example
 
@@ -128,15 +129,13 @@ controller.addActionItem(
 controller.addCancelButton()
 ```
 
-<img align="left" height="480" src="https://github.com/akaashdev/SheetKit/blob/master/Screenshots/screen-record-ipad-2.gif">
-
 **SheetKit** is completely adaptive for all screens and multitasking windows.​ To use the adaptive version **ActionSheetController** use **AppActionSheetPopViewController** and pass the **sourceView** that prompts the popOver. It uses popOverPresentationController to adaptive present for various screens.
 
 ```swift
 let controller = AppActionSheetPopViewController(sourceView: settingsButton)
 present(controller, animated: true)
 ```
-
+![Alt Text](https://github.com/akaashdev/SheetKit/blob/master/Screenshots/screen-record-ipad-2.gif)
 
 ## Author
 
