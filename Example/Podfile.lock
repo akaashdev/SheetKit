@@ -1,0 +1,16 @@
+PODS:
+  - SheetKit (0.1.0)
+
+DEPENDENCIES:
+  - SheetKit (from `../`)
+
+EXTERNAL SOURCES:
+  SheetKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SheetKit: ef071a29c2dd0ad13d774bbb8e854ceb26c4d350
+
+PODFILE CHECKSUM: 1baf39f93ee1a9ca23cb2ef381abbd537b2b0908
+
+COCOAPODS: 1.8.4

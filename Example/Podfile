@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SheetKit_Example' do
+  pod 'SheetKit', :path => '../'
+
+  target 'SheetKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

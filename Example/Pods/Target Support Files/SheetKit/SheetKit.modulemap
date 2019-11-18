@@ -1,0 +1,6 @@
+framework module SheetKit {
+  umbrella header "SheetKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
