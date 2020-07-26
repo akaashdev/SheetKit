@@ -138,8 +138,11 @@ present(controller, animated: true)
 ![Alt Text](https://github.com/akaashdev/SheetKit/blob/master/Screenshots/screen-record-ipad-2.gif)
 
 ## Author
+Akaash Dev </br>
+[hello@akaash.dev](mailto:hello@akaash.dev?Subject=Hello!)
 
-Akaash Dev, heatblast.akaash@gmail.com 
+
+<a href="https://twitter.com/akaash_dev"><img src="https://raw.githubusercontent.com/akaashdev/portfolio-site/master/img/social-icons/twitter-icon-original.png" width=38px height=38px></a> &nbsp; <a href="https://linkedin.com/in/akaashdev"><img src="https://raw.githubusercontent.com/akaashdev/portfolio-site/master/img/social-icons/linkedin-icon-original.png" width=38px height=38px></a> 
 
 ## License
 
