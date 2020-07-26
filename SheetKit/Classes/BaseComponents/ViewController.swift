@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  ADActionSheet
+//  SheetKit
 //
 //  Created by Akaash Dev on 18/11/19.
 //  Copyright © 2019 Akaash Dev. All rights reserved.

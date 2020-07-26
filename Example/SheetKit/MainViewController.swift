@@ -1,6 +1,6 @@
 //
 //  MainViewController.swift
-//  ADActionSheet
+//  SheetKit_Example
 //
 //  Created by Akaash Dev on 03/10/19.
 //  Copyright © 2019 Akaash Dev. All rights reserved.

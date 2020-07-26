@@ -3,7 +3,7 @@
 //  SheetKit_Example
 //
 //  Created by Akaash Dev on 18/11/19.
-//  Copyright © 2019 CocoaPods. All rights reserved.
+//  Copyright © 2019 Akaash Dev. All rights reserved.
 //
 
 import UIKit

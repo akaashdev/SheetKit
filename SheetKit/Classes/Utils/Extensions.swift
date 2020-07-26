@@ -1,6 +1,6 @@
 //
 //  Extensions.swift
-//  ADActionSheet
+//  SheetKit
 //
 //  Created by Akaash Dev on 04/10/19.
 //  Copyright © 2019 Akaash Dev. All rights reserved.

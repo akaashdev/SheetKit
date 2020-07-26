@@ -1,6 +1,6 @@
 //
 //  FriendsInfoView.swift
-//  ADActionSheet
+//  SheetKit_Example
 //
 //  Created by Akaash Dev on 17/11/19.
 //  Copyright © 2019 Akaash Dev. All rights reserved.
