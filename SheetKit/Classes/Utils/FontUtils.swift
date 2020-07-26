@@ -91,16 +91,3 @@ extension UIFont {
     }
     
 }
-
-
-extension Font {
-    
-    static let kMessageIconFontName = "Message-icons"
-    
-    static let kMessageIconPhotosCode = "\u{e903}"
-    static let kMessageIconVideoCode = "\u{e901}"
-    static let kMessageIconGIFCode = "\u{e904}"
-    static let kMessageIconStickerCode = "\u{e902}"
-    static let kMessageIconFileCode = "\u{e905}"
-    
-}

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AppButton: View {
+class AppButton: UIView {
     
     var contentPadding: CGFloat = 16 {
         didSet {
@@ -32,42 +32,36 @@ class AppButton: View {
     
     lazy var button: UIButton = {
         let view = UIButton(type: .system)
-        view.titleLabel?.font = Font.getMediumFont().bold
+        view.titleLabel?.font = UIFont.systemFont(ofSize: 17, weight: .bold)
         view.setTitleColor(.labelColor, for: .normal)
         view.tintColor = .labelColor
         return view
     }()
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: button.intrinsicContentSize.width,
-                      height: 48)
+        return CGSize(width: button.intrinsicContentSize.width, height: 48)
     }
     
-    override func setupView() {
-        super.setupView()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         setInsets(contentPadding)
         layer.masksToBounds = true
-    }
-    
-    override func setupSubviews() {
-        super.setupSubviews()
         addSubview(blurView)
         addSubview(button)
     }
     
-    override func alignViews() {
-        super.alignViews()
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
         blurView.frame = bounds
         button.frame = bounds
         layer.cornerRadius = bounds.height / 2
     }
     
     private func setInsets(_ padding: CGFloat) {
-        button.contentEdgeInsets = UIEdgeInsets(top: padding,
-                                                left: padding,
-                                                bottom: padding,
-                                                right: padding)
+        button.contentEdgeInsets = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
     }
-
 }
-

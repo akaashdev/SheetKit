@@ -47,7 +47,7 @@ class CastTableViewCell: UITableViewCell {
     
     lazy var castLabel: UILabel = {
         let view = UILabel()
-        view.font = Font.getRegularFont().bold
+        view.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         return view
     }()
     

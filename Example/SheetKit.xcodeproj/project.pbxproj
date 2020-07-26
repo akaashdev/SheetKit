@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5014288E2382B01700F9B083 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5014288D2382B01700F9B083 /* ViewController.swift */; };
 		501428902382BBB200F9B083 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5014288F2382BBB200F9B083 /* ColorUtils.swift */; };
 		505FF5A42382ABE600944E7F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505FF5A02382ABE600944E7F /* MainViewController.swift */; };
 		505FF5A52382ABE600944E7F /* FriendsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505FF5A12382ABE600944E7F /* FriendsDataSource.swift */; };
 		505FF5A62382ABE600944E7F /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505FF5A22382ABE600944E7F /* AppButton.swift */; };
 		505FF5A72382ABE600944E7F /* FriendsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505FF5A32382ABE600944E7F /* FriendsInfoView.swift */; };
-		505FF5CA2382AC5D00944E7F /* FontUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505FF5C62382AC5D00944E7F /* FontUtils.swift */; };
 		505FF5CC2382AC5D00944E7F /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505FF5C82382AC5D00944E7F /* ViewUtils.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -38,13 +36,11 @@
 		166F7D8A70C9D32DD6E26E3A /* Pods-SheetKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SheetKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-SheetKit_Tests/Pods-SheetKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		200A1AA30E12B173DDE705F0 /* Pods_SheetKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SheetKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		23CFA810E522AC14A63BE275 /* Pods-SheetKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SheetKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-SheetKit_Tests/Pods-SheetKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		5014288D2382B01700F9B083 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5014288F2382BBB200F9B083 /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		505FF5A02382ABE600944E7F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		505FF5A12382ABE600944E7F /* FriendsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsDataSource.swift; sourceTree = "<group>"; };
 		505FF5A22382ABE600944E7F /* AppButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		505FF5A32382ABE600944E7F /* FriendsInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsInfoView.swift; sourceTree = "<group>"; };
-		505FF5C62382AC5D00944E7F /* FontUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontUtils.swift; sourceTree = "<group>"; };
 		505FF5C82382AC5D00944E7F /* ViewUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SheetKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SheetKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -97,8 +93,6 @@
 		505FF5C42382AC4F00944E7F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				5014288D2382B01700F9B083 /* ViewController.swift */,
-				505FF5C62382AC5D00944E7F /* FontUtils.swift */,
 				505FF5C82382AC5D00944E7F /* ViewUtils.swift */,
 				5014288F2382BBB200F9B083 /* ColorUtils.swift */,
 			);
@@ -362,10 +356,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				501428902382BBB200F9B083 /* ColorUtils.swift in Sources */,
-				5014288E2382B01700F9B083 /* ViewController.swift in Sources */,
 				505FF5A52382ABE600944E7F /* FriendsDataSource.swift in Sources */,
 				505FF5CC2382AC5D00944E7F /* ViewUtils.swift in Sources */,
-				505FF5CA2382AC5D00944E7F /* FontUtils.swift in Sources */,
 				505FF5A42382ABE600944E7F /* MainViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				505FF5A72382ABE600944E7F /* FriendsInfoView.swift in Sources */,
