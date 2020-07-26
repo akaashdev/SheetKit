@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  SheetKit
+//  SheetKit_Example
 //
-//  Created by heatblast.akaash@gmail.com on 11/18/2019.
-//  Copyright (c) 2019 heatblast.akaash@gmail.com. All rights reserved.
+//  Created by Akaash Dev on 11/18/2019.
+//  Copyright (c) 2019 Akaash Dev. All rights reserved.
 //
 
 import UIKit

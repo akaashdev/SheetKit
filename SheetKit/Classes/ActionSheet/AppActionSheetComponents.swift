@@ -1,6 +1,6 @@
 //
 //  AppActionSheetComponents.swift
-//  ZohoSocial
+//  SheetKit
 //
 //  Created by Akaash Dev on 22/03/19.
 //  Copyright © 2019 Akaash Dev. All rights reserved.

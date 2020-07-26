@@ -1,6 +1,6 @@
 //
 //  AppActionSheetManager.swift
-//  ADActionSheet
+//  SheetKit
 //
 //  Created by Akaash Dev on 04/11/19.
 //  Copyright © 2019 Akaash Dev. All rights reserved.

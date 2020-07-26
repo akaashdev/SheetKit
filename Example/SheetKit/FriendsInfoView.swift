@@ -1,6 +1,6 @@
 //
 //  FriendsInfoView.swift
-//  ADActionSheet
+//  SheetKit_Example
 //
 //  Created by Akaash Dev on 17/11/19.
 //  Copyright © 2019 Akaash Dev. All rights reserved.
@@ -10,7 +10,17 @@ import UIKit
 import SheetKit
 
 
-class FriendsInfoView: View {
+class FriendsInfoView: UIView {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupSubviews()
+        setupConstraints()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     private lazy var imageView: UIImageView = {
         let view = UIImageView()
@@ -25,20 +35,18 @@ class FriendsInfoView: View {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.text = friendsInfoText
-        view.font = Font.getMediumFont()
+        view.font = UIFont.systemFont(ofSize: 18)
         view.textColor = .labelColor
         view.numberOfLines = 0
         return view
     }()
     
-    override func setupSubviews() {
-        super.setupSubviews()
+    private func setupSubviews() {
         addSubview(imageView)
         addSubview(infoLabel)
     }
     
-    override func setupConstraints() {
-        super.setupConstraints()
+    private func setupConstraints() {
         imageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5).activate()
         imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 0.25).activate()
         imageView.alignHorizontallyCenter()
@@ -48,7 +56,6 @@ class FriendsInfoView: View {
         infoLabel.placeBelow(view: imageView, padding: 40)
         infoLabel.safeBottomAnchor(padding: -24)
     }
-     
 }
 
 

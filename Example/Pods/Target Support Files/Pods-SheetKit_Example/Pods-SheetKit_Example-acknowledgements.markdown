@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## SheetKit
 
-Copyright (c) 2019 heatblast.akaash@gmail.com <akaashdev.sc@zohocorp.com>
+Copyright (c) 2019 Akaash Dev <heatblast.akaash@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

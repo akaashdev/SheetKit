@@ -1,6 +1,6 @@
 //
 //  PreviewTableView.swift
-//  ZohoSocial
+//  SheetKit
 //
 //  Created by Akaash Dev on 11/06/18.
 //  Copyright © 2018 Akaash Dev. All rights reserved.

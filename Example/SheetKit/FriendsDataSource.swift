@@ -1,6 +1,6 @@
 //
 //  FriendsDataSource.swift
-//  ADActionSheet
+//  SheetKit_Example
 //
 //  Created by Akaash Dev on 10/11/19.
 //  Copyright © 2019 Akaash Dev. All rights reserved.
@@ -47,7 +47,7 @@ class CastTableViewCell: UITableViewCell {
     
     lazy var castLabel: UILabel = {
         let view = UILabel()
-        view.font = Font.getRegularFont().bold
+        view.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         return view
     }()
     

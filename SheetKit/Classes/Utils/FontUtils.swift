@@ -1,6 +1,6 @@
 //
 //  FontUtils.swift
-//  ZohoSocial
+//  SheetKit
 //
 //  Created by Akaash Dev on 19/12/18.
 //  Copyright © 2018 Akaash Dev. All rights reserved.
@@ -89,18 +89,5 @@ extension UIFont {
     var ultraLight: UIFont {
         return .systemFont(ofSize: pointSize, weight: .ultraLight)
     }
-    
-}
-
-
-extension Font {
-    
-    static let kMessageIconFontName = "Message-icons"
-    
-    static let kMessageIconPhotosCode = "\u{e903}"
-    static let kMessageIconVideoCode = "\u{e901}"
-    static let kMessageIconGIFCode = "\u{e904}"
-    static let kMessageIconStickerCode = "\u{e902}"
-    static let kMessageIconFileCode = "\u{e905}"
     
 }

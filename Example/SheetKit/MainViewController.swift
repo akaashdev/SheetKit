@@ -1,6 +1,6 @@
 //
 //  MainViewController.swift
-//  ADActionSheet
+//  SheetKit_Example
 //
 //  Created by Akaash Dev on 03/10/19.
 //  Copyright © 2019 Akaash Dev. All rights reserved.
@@ -9,8 +9,9 @@
 import UIKit
 import SheetKit
 
-class MainViewController: ViewController {
+class MainViewController: UIViewController {
     
+    // MARK: Properties
     private let wallpapers = [
         "wallpaper-1",
         "wallpaper-2",
@@ -19,7 +20,115 @@ class MainViewController: ViewController {
         "wallpaper-5",
         "wallpaper-6"
     ]
+    private var currentWallpaperIndex = 5
     
+    // MARK: Life Cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViews()
+        setupConstraints()
+    }
+    
+    // MARK: Actions
+    @objc private func handleChangeBackgroundAction() {
+        currentWallpaperIndex = (currentWallpaperIndex + 1) % wallpapers.count
+        wallpaperImageView.image = UIImage(named: wallpapers[currentWallpaperIndex])
+    }
+    
+    @available(iOS 13.0, *)
+    @objc private func handleToggleThemeAction() {
+        let newInterface: UIUserInterfaceStyle = traitCollection.userInterfaceStyle == .dark ? .light : .dark
+        UIView.transition(with: view,
+                          duration: 0.4,
+                          options: .transitionCrossDissolve,
+                          animations: { self.view.window?.overrideUserInterfaceStyle = newInterface })
+    }
+    
+    @objc private func handlePreviewOpenAction() {
+        let controller = PreviewViewController()
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "About"
+        label.font = UIFont.systemFont(ofSize: 30, weight: .heavy)
+        controller.previewView.headerView.addSubview(label)
+        controller.previewView.headerHeight = 60
+        label.anchorBottom()
+        label.anchorTop(padding: 12)
+        label.fillSuperViewWidth(padding: 12)
+        
+        let infoView = FriendsInfoView()
+        infoView.translatesAutoresizingMaskIntoConstraints = false
+        controller.contentView.addSubview(infoView)
+        infoView.fillSuperView()
+        
+        controller.initialPosition = .collapsed
+        present(controller, animated: true)
+    }
+    
+    let dataSource = FriendsCastDataSource()
+    
+    @objc private func handlePreviewTableViewOpenAction() {
+        let controller = PreviewTableViewController()
+        controller.minimumPreviewHeight = .absolute(100)
+        controller.preferredPreviewHeight = .fractional(0.54)
+        
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Cast"
+        label.font = UIFont.systemFont(ofSize: 30, weight: .heavy)
+        controller.previewView.headerView.addSubview(label)
+        controller.previewView.headerHeight = 60
+        label.anchorBottom()
+        label.anchorTop(padding: 12)
+        label.fillSuperViewWidth(padding: 12)
+        
+        dataSource.registerCellTypes(in: controller.tableView)
+        controller.tableView.dataSource = dataSource
+        controller.tableView.rowHeight = 64
+        controller.tableView.allowsSelection = false
+        present(controller, animated: true)
+    }
+    
+    @objc private func handleSheetOpenAction() {
+        let controller = AppActionSheetPopViewController(sourceView: settingsButton)
+        controller.addTitle("Menu")
+        
+        let item1 = AppActionItem(type: .button,
+                                  title: "Change Background",
+                                  image: UIImage(named: "action-button-wallpaper"),
+                                  handler: { _ in self.handleChangeBackgroundAction() })
+        
+        let item3 = AppActionItem(type: .button,
+                                  title: "Joey doesn't share food!",
+                                  image: UIImage(named: "action-button-share"),
+                                  imageTintColor: .flatOrange)
+        
+        let item4 = AppActionItem(type: .button,
+                                  title: "We were on a break!",
+                                  image: UIImage(named: "action-button-break"),
+                                  imageTintColor: .flatBlue)
+        
+        let item5 = AppActionItem(type: .destructiveButton,
+                                  title: "Delete Background",
+                                  image: UIImage(named: "action-button-delete"),
+                                  handler: { _ in self.wallpaperImageView.image = nil })
+        
+        if #available(iOS 13.0, *) {
+            let item2 = AppActionItem(type: .button,
+            title: "Toggle Theme",
+            image: UIImage(named: "action-button-theme"),
+            handler: { _ in self.handleToggleThemeAction() })
+            
+            [item1, item2, item3, item4, item5].forEach { controller.addActionItem($0) }
+        } else {
+            [item1, item3, item4, item5].forEach { controller.addActionItem($0) }
+        }
+        
+        controller.addCancelButton()
+        present(controller, animated: true)
+    }
+    
+    // MARK: Views and Constraints
     private lazy var wallpaperImageView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -90,8 +199,7 @@ class MainViewController: ViewController {
         return view
     }()
     
-    override func setupViews() {
-        super.setupViews()
+    private func setupViews() {
         view.addSubview(wallpaperImageView)
         view.addSubview(blurView)
         view.addSubview(stackView)
@@ -102,9 +210,7 @@ class MainViewController: ViewController {
         stackView.addArrangedSubview(castButton)
     }
     
-    override func setupConstraints() {
-        super.setupConstraints()
-        
+    private func setupConstraints() {
         wallpaperImageView.fillSuperView(safeLayout: false)
         blurView.fillSuperView(safeLayout: false)
         
@@ -114,138 +220,4 @@ class MainViewController: ViewController {
         stackView.fillSuperViewWidth(padding: 24)
         stackView.alignCenter()
     }
-    
-    var currentIndex = 5
-    @objc private func handleChangeBackgroundAction() {
-        currentIndex = (currentIndex + 1) % wallpapers.count
-        wallpaperImageView.image = UIImage(named: wallpapers[currentIndex])
-    }
-    
-    @available(iOS 13.0, *)
-    @objc private func handleToggleThemeAction() {
-        let newInterface: UIUserInterfaceStyle = traitCollection.userInterfaceStyle == .dark ? .light : .dark
-        UIView.transition(with: view,
-                          duration: 0.4,
-                          options: .transitionCrossDissolve,
-                          animations: { self.view.window?.overrideUserInterfaceStyle = newInterface })
-    }
-    
-    @objc private func handlePreviewOpenAction() {
-        let controller = PreviewViewController()
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "About"
-        label.font = Font.ofSize(30).heavy
-        controller.previewView.headerView.addSubview(label)
-        controller.previewView.headerHeight = 60
-        label.anchorBottom()
-        label.anchorTop(padding: 12)
-        label.fillSuperViewWidth(padding: 12)
-        
-        let infoView = FriendsInfoView()
-        infoView.translatesAutoresizingMaskIntoConstraints = false
-        controller.contentView.addSubview(infoView)
-        infoView.fillSuperView()
-        
-        controller.initialPosition = .collapsed
-        present(controller, animated: true)
-    }
-    
-    let dataSource = FriendsCastDataSource()
-    
-    @objc private func handlePreviewTableViewOpenAction() {
-        let controller = PreviewTableViewController()
-        controller.minimumPreviewHeight = .absolute(100)
-        controller.preferredPreviewHeight = .fractional(0.54)
-        
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Cast"
-        label.font = Font.ofSize(30).heavy
-        controller.previewView.headerView.addSubview(label)
-        controller.previewView.headerHeight = 60
-        label.anchorBottom()
-        label.anchorTop(padding: 12)
-        label.fillSuperViewWidth(padding: 12)
-        
-        dataSource.registerCellTypes(in: controller.tableView)
-        controller.tableView.dataSource = dataSource
-        controller.tableView.rowHeight = 64
-        controller.tableView.allowsSelection = false
-        present(controller, animated: true)
-    }
-    
-    @objc private func handleSheetOpenAction() {
-        let controller = AppActionSheetPopViewController(sourceView: settingsButton)
-        controller.addTitle("Menu")
-        
-        let item1 = AppActionItem(type: .button,
-                                  title: "Change Background",
-                                  image: UIImage(named: "action-button-wallpaper"),
-                                  handler: { _ in self.handleChangeBackgroundAction() })
-        
-        let item3 = AppActionItem(type: .button,
-                                  title: "Joey doesn't share food!",
-                                  image: UIImage(named: "action-button-share"),
-                                  imageTintColor: .flatOrange)
-        
-        let item4 = AppActionItem(type: .button,
-                                  title: "We were on a break!",
-                                  image: UIImage(named: "action-button-break"),
-                                  imageTintColor: .flatBlue)
-        
-        let item5 = AppActionItem(type: .destructiveButton,
-                                  title: "Delete Background",
-                                  image: UIImage(named: "action-button-delete"),
-                                  handler: { _ in self.wallpaperImageView.image = nil })
-        
-        if #available(iOS 13.0, *) {
-            let item2 = AppActionItem(type: .button,
-            title: "Toggle Theme",
-            image: UIImage(named: "action-button-theme"),
-            handler: { _ in self.handleToggleThemeAction() })
-            
-            [item1, item2, item3, item4, item5].forEach { controller.addActionItem($0) }
-        } else {
-            [item1, item3, item4, item5].forEach { controller.addActionItem($0) }
-        }
-        
-        controller.addCancelButton()
-        present(controller, animated: true)
-    }
-
 }
-
-
-//typealias CompletionBlock = (()->())?
-//
-//extension UIViewController {
-//
-//    func presentActionSheetController(_ controller: AppActionSheetPopViewController, sourceView: PopOverSourceView, animated: Bool = true, completion: CompletionBlock = nil) {
-//
-//        guard let popOverController = controller.popoverPresentationController else {
-//            present(
-//                controller,
-//                animated: animated,
-//                completion: completion
-//            )
-//            return
-//        }
-//
-//        if let view = sourceView as? UIView {
-//            popOverController.sourceView = view.superview
-//            popOverController.sourceRect = view.frame
-//        } else if let item = sourceView as? UIBarButtonItem {
-//            popOverController.barButtonItem = item
-//        }
-//
-//        popOverController.canOverlapSourceViewRect = false
-//        popOverController.passthroughViews = []
-//        present(
-//            controller,
-//            animated: animated,
-//            completion: completion
-//        )
-//    }
-//
-//}
