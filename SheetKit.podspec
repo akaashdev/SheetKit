@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SheetKit'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'A lightweight, user-friendly Swift library to create adaptive card-styled UI for action sheet and interactive bottom sheets easily
 '
   s.description      = <<-DESC
@@ -11,14 +11,14 @@ SheetKit supports ActionItem types like button, title, cancelButton, destructive
 SheetKit also provides BottomSheets called as PreviewViewController in the kit. These components interactively grow on dragging, occupying the required space only on both brief and detail mode. The heights of each mode is completely customizable.​
                        DESC
   s.homepage         = 'https://github.com/akaashdev/SheetKit'
-  s.screenshots      = 'https://github.com/akaashdev/SheetKit/blob/code-clean/Screenshots/screenshot-iphone-1.png?raw=true',
-                       'https://github.com/akaashdev/SheetKit/blob/code-clean/Screenshots/screenshot-iphone-2.png?raw=true',
-                       'https://github.com/akaashdev/SheetKit/blob/code-clean/Screenshots/screenshot-iphone-3.png?raw=true',
-                       'https://github.com/akaashdev/SheetKit/blob/code-clean/Screenshots/screenshot-iphone-4.png?raw=true',
-                       'https://github.com/akaashdev/SheetKit/blob/code-clean/Screenshots/screenshot-iphone-5.png?raw=true',
-                       'https://github.com/akaashdev/SheetKit/blob/code-clean/Screenshots/screenshot-iphone-6.png?raw=true',
-                       'https://github.com/akaashdev/SheetKit/blob/code-clean/Screenshots/screenshot-ipad-1.png?raw=true',
-                       'https://github.com/akaashdev/SheetKit/blob/code-clean/Screenshots/screenshot-ipad-2.png?raw=true'
+  s.screenshots      = 'https://github.com/akaashdev/SheetKit/blob/master/Screenshots/screenshot-iphone-1.png?raw=true',
+                       'https://github.com/akaashdev/SheetKit/blob/master/Screenshots/screenshot-iphone-2.png?raw=true',
+                       'https://github.com/akaashdev/SheetKit/blob/master/Screenshots/screenshot-iphone-3.png?raw=true',
+                       'https://github.com/akaashdev/SheetKit/blob/master/Screenshots/screenshot-iphone-4.png?raw=true',
+                       'https://github.com/akaashdev/SheetKit/blob/master/Screenshots/screenshot-iphone-5.png?raw=true',
+                       'https://github.com/akaashdev/SheetKit/blob/master/Screenshots/screenshot-iphone-6.png?raw=true',
+                       'https://github.com/akaashdev/SheetKit/blob/master/Screenshots/screenshot-ipad-1.png?raw=true',
+                       'https://github.com/akaashdev/SheetKit/blob/master/Screenshots/screenshot-ipad-2.png?raw=true'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Akaash Dev S C' => 'heatblast.akaash@gmail.com' }
   s.source           = { :git => 'https://github.com/akaashdev/SheetKit.git', :tag => s.version.to_s }
